@@ -41,7 +41,7 @@ pip install pyinstaller
 ### 2. Build the executable
 Open a command prompt and run:
 ```sh
-pyinstaller --onefile main.py
+python3 -m PyInstaller --onefile --windowed --hidden-import=discord --hidden-import=requests --hidden-import=json --hidden-import=os --hidden-import=re --hidden-import=tkinter --hidden-import=pystray “C:\Path\To\Your\script.py”
 ```
 
 ### 3. Run the compiled exe
