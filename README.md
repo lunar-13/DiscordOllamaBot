@@ -1,6 +1,5 @@
 # DiscordOllamaBot
 A python powered discord bot that uses ollama as a core
-
 This project is a Discord bot with a Tkinter-based graphical interface for starting and stopping the bot. The application also minimizes to the system tray when closed.
 
 ## Features
@@ -14,35 +13,39 @@ This project is a Discord bot with a Tkinter-based graphical interface for start
 - Ollama API running locally at `http://localhost:11434`
 
 ## Installation
-
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/lunar-13/DiscordOllamaBot.git
+cd DiscordOllamaBot
 ```
 
 ### 2. Install Dependencies
-This script automatically installs required dependencies, but you can also install them manually:
-```sh
-pip install -r requirements.txt
+Install dependencies with:
 ```
-
-If `requirements.txt` is missing, install the necessary packages manually:
-```sh
 pip install discord requests pystray Pillow
 ```
 
 ### 3. Set Up Your Bot Token
 Replace `YOUR_DISCORD_BOT_TOKEN` in the script with your actual Discord bot token or set it as an environment variable:
-```sh
-export DISCORD_BOT_TOKEN=your_token_here  # Linux/macOS
-set DISCORD_BOT_TOKEN=your_token_here  # Windows (CMD)
+```python
+import os
+DISCORD_BOT_TOKEN = os.getenv('DISCORD_BOT_TOKEN', 'your_token_here')
 ```
 
-### 4. Run the Bot
+## Compile with PyInstaller
+### 1. Install pyinstaller
 ```sh
-python bot.py
+pip install pyinstaller
 ```
+
+### 2. Build the executable
+Open a command prompt and run:
+```sh
+pyinstaller --onefile main.py
+```
+
+### 3. Run the compiled exe
+The compiled exe will be in the `dist` folder. Double-click `Main.exe` to start the application.
 
 ## Usage
 - Click **Start Bot** to run the bot.
@@ -60,6 +63,4 @@ If you encounter issues, try the following:
 - Ensure all dependencies are installed.
 - Check that your Discord bot token is correct.
 - Ensure Ollama API is accessible at `http://localhost:11434`.
-
 For additional help, open an issue on GitHub.
-
